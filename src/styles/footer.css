@@ -1,0 +1,120 @@
+.footer {
+  position: relative;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr;
+  /* align-items: center; */
+  /* grid-template-columns: ; */
+}
+.my-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (min-width: 1024px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .email-text {
+    grid-column: 1/2;
+  }
+  .email-form {
+    grid-column: 3/4;
+  }
+  .logo {
+  }
+  .shop-category {
+  }
+  .shop-collection {
+  }
+  .footer-break {
+    width: 100%;
+    grid-column: 1/4;
+  }
+  .copyright-detail {
+  }
+  .my-links {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .email-text {
+    grid-column: 1/4;
+  }
+  .email-form {
+    grid-column: 1/4;
+  }
+  .logo {
+    grid-column: 1/4;
+  }
+  .shop-category {
+    grid-column: 1/2;
+  }
+  .shop-collection {
+    grid-column: 3/4;
+  }
+  .footer-break {
+    width: 100%;
+    grid-column: 1/4;
+  }
+  .copyright-detail {
+    grid-column: 1/2;
+  }
+  .my-links {
+    grid-column: 2/4;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.footer input[name="email"]:user-invalid {
+  border: 2px solid red;
+}
+.pass-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  /* left: 50%; */
+  display: flex;
+  gap: 5px;
+  background-color: rgb(127, 219, 127);
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 10px;
+  z-index: 1;
+}
+.fail-sub {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  /* left: 50%; */
+  display: flex;
+  gap: 5px;
+  background-color: rgb(223, 121, 121);
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 10px;
+}
+.pass-sub-pass-text {
+  border: 1px solid black;
+  width: 150px;
+
+  padding: 5px;
+  border-radius: 5px;
+}
+.fail-sub-fail-text {
+  border: 1px solid black;
+  width: 150px;
+
+  padding: 5px;
+  border-radius: 5px;
+}
