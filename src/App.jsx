@@ -5,6 +5,7 @@ import "./App.css";
 import NavBar from "./components/navigation/NavBar";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
+import StoreFront from "./components/storeFront/StoreFront";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,7 +13,8 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Outlet />
+      <StoreFront />
+      {/* <Outlet /> */}
       <Footer />
     </div>
   );
