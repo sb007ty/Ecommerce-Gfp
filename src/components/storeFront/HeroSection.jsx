@@ -12,7 +12,12 @@ function HeroSection() {
         <button>Shop Now</button>
       </div>
       <figure className="hero-sec-img">
-        <img src={fashionimg} alt="fashion-img" />
+        <img
+          src={fashionimg}
+          alt="fashion-img"
+          width={"696px"}
+          height={"526px"}
+        />
       </figure>
     </section>
   );

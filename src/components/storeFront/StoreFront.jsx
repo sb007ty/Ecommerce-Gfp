@@ -1,5 +1,5 @@
 import HeroSection from "./HeroSection";
-import ProductGridSection from "./ProductGridSection";
+import ProductGridSection from "./productGrid/ProductGridSection";
 
 function StoreFront() {
   return (
