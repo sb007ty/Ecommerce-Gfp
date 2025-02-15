@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
       <NavBar />
-      <StoreFront />
-      {/* <Outlet /> */}
+
+      <Outlet />
       <Footer />
     </div>
   );
