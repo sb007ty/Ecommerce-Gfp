@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StoreFront from "./components/storeFront/StoreFront.jsx";
+import ProductDetails from "./components/storeFront/productGrid/ProductDetails";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 // import router from "./router.js";
 
 const router = createBrowserRouter([
@@ -12,8 +15,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <StoreFront />,
+      },
+      {
+        path: "product-details/*",
+        element: <ProductDetails />,
       },
     ],
   },
@@ -21,6 +28,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );

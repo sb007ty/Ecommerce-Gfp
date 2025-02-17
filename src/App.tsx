@@ -10,8 +10,9 @@ function App() {
   return (
     <div>
       <NavBar />
-
+      <hr />
       <Outlet />
+      <hr />
       <Footer />
     </div>
   );

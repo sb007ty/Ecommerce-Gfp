@@ -1,8 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { updateProductDetailsId } from "../../../redux/slices/productSlice";
+import { useAppDispatch } from "../../../redux/redux-hook";
 
 function Product({ product }: { product: any }) {
   //   console.log(product, "prod*");
-  const { images, name } = product;
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { images, name, product_id } = product;
   const uniqueColors = new Map();
   images.forEach((item) => {
     if (!uniqueColors.has(item["color"]))
@@ -16,10 +22,14 @@ function Product({ product }: { product: any }) {
   )![1];
   console.log(activeColor, "act", uniqueColorsArr, imgToDisplay);
   //   console.log(uniqueColors, "un****");
+  const goToProductDetails = () => {
+    dispatch(updateProductDetailsId(product_id));
+    navigate(`product-details/${product_id}`);
+  };
 
   return (
     <div className="product">
-      <div className="img-container">
+      <div className="img-container" onClick={goToProductDetails}>
         <img
           className="product-img"
           src={imgToDisplay}

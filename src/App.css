@@ -7,6 +7,9 @@
   --tablet-width: 768px;
   --large-mobile-width: 425px;
 }
+figure {
+  text-align: start;
+}
 
 .logo {
   height: 6em;

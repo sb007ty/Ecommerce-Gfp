@@ -5,7 +5,7 @@ import axios from "axios";
 import Loading from "../../common/Loading";
 import ApiErrorComp from "../../common/ApiErrorComp";
 import Product from "./Product";
-import { ProductResponse } from "../../../allTypes.type";
+import { ProductDetailsInterface } from "../../../allTypes.type";
 const ProductGridSection = () => {
   const getProducts = async (url) => {
     try {
@@ -17,7 +17,7 @@ const ProductGridSection = () => {
     }
   };
 
-  const { data, isLoading, error } = useSWRImmutable<ProductResponse>(
+  const { data, isLoading, error } = useSWRImmutable(
     "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products?collection=latest",
     getProducts
   );

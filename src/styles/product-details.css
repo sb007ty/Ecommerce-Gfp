@@ -1,0 +1,20 @@
+.product-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
+  padding: 25px;
+}
+.product-img-container {
+  grid-column: 1/2;
+}
+.product-details-meta-container {
+  grid-column: 2/3;
+}
+.quantity-section {
+  display: flex;
+  flex-direction: column;
+}
+.small-product-images {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
