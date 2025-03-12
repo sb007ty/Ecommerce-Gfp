@@ -27,8 +27,7 @@ const ProductGridSection = () => {
     <div className="product-grid">
       {isLoading && <Loading />}
       {error && <ApiErrorComp />}
-      {!isLoading &&
-        !error &&
+      {data &&
         products?.map((item) => {
           return <Product key={item["product_id"]} product={item} />;
         })}

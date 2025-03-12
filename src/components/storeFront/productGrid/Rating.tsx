@@ -1,9 +1,24 @@
 import { faStarHalfStroke } from "@fortawesome/free-regular-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../../redux/redux-hook";
 
-function Rating({ rating, reviews }: { rating: number; reviews: number }) {
+function Rating({
+  rating,
+  reviews,
+  ratingSection,
+}: {
+  rating: number;
+  reviews: number;
+  ratingSection: boolean;
+}) {
   const ratingIsWholeNum = rating === Math.floor(rating);
+  const productId = useAppSelector((state) => state.product.productDetails.id);
+  const navigate = useNavigate();
+  const seeAllReviews = () => {
+    navigate(`/reviews/${productId}`);
+  };
 
   return (
     <div className="rating-container">
@@ -25,7 +40,11 @@ function Rating({ rating, reviews }: { rating: number; reviews: number }) {
           />
         )}
       </div>
-      <div>{reviews > 0 ? `See all ${reviews} reviews` : "No reviews"}</div>
+      {!ratingSection && (
+        <button onClick={seeAllReviews}>
+          {reviews > 0 ? `See all ${reviews} reviews` : "No reviews"}
+        </button>
+      )}
     </div>
   );
 }

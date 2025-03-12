@@ -1,0 +1,26 @@
+.overall-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.rating-type {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.rating-name {
+  width: 200px;
+  text-align: left;
+}
+.rating-bar-outer {
+  overflow: hidden;
+  width: 200px;
+  height: 5px;
+  background-color: gray;
+  border-radius: 20px;
+}
+.rating-bar-inner {
+  background-color: green;
+  height: 5px;
+}

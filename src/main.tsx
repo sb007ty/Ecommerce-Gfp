@@ -7,6 +7,7 @@ import StoreFront from "./components/storeFront/StoreFront.jsx";
 import ProductDetails from "./components/storeFront/productGrid/ProductDetails";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ReviewsSection from "./components/storeFront/reviews/ReviewsSection";
 // import router from "./router.js";
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "product-details/*",
         element: <ProductDetails />,
+      },
+      {
+        path: "reviews/*",
+        element: <ReviewsSection />,
       },
     ],
   },

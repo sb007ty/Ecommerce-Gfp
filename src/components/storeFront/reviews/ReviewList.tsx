@@ -1,5 +1,5 @@
 function ReviewList() {
-  return <div></div>;
+  return <div className="review-list"></div>;
 }
 
 export default ReviewList;
