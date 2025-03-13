@@ -1,13 +1,23 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import StoreFront from "./components/storeFront/StoreFront.jsx";
-import ProductDetails from "./components/storeFront/productGrid/ProductDetails";
+// import App from "./App.jsx";
+// import StoreFront from "./components/storeFront/StoreFront.jsx";
+// import ProductDetails from "./components/storeFront/productGrid/ProductDetails";
+// import ReviewsSection from "./components/storeFront/reviews/ReviewsSection";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import ReviewsSection from "./components/storeFront/reviews/ReviewsSection";
+
+const App = lazy(() => import("./App.jsx"));
+const StoreFront = lazy(() => import("./components/storeFront/StoreFront.jsx"));
+const ProductDetails = lazy(
+  () => import("./components/storeFront/productGrid/ProductDetails")
+);
+const ReviewsSection = lazy(
+  () => import("./components/storeFront/reviews/ReviewsSection")
+);
 // import router from "./router.js";
 
 const router = createBrowserRouter([
@@ -20,11 +30,11 @@ const router = createBrowserRouter([
         element: <StoreFront />,
       },
       {
-        path: "product-details/*",
+        path: "product-details/:productId",
         element: <ProductDetails />,
       },
       {
-        path: "reviews/*",
+        path: "reviews/:productId",
         element: <ReviewsSection />,
       },
     ],

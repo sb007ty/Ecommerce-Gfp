@@ -2,17 +2,18 @@ import useSWRImmutable from "swr/immutable";
 import OverallRating from "./OverallRating";
 import ReviewList from "./ReviewList";
 import { useAppSelector } from "../../../redux/redux-hook";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { fetchProductReviews } from "../../../swr/fetchers";
 import Loading from "../../common/Loading";
 import ApiErrorComp from "../../common/ApiErrorComp";
-
+console.log("HELLO&*********************");
 function ReviewsSection() {
   const location = useLocation();
   const { pathname } = location;
+  const { productId: productIdFromParams } = useParams();
   const productId =
     useAppSelector((state) => state.product.productDetails.id) ||
-    pathname.split("/").pop();
+    productIdFromParams;
   const {
     data: reviewData,
     isLoading,

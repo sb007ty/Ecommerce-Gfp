@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { data, useLocation } from "react-router-dom";
+import { data, useLocation, useParams } from "react-router-dom";
 import { RootState } from "../../../redux/store";
 import { useAppDispatch, useAppSelector } from "../../../redux/redux-hook";
 import useSWRImmutable from "swr/immutable";
@@ -17,9 +17,11 @@ const maxSmallImages = 2;
 function ProductDetails() {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
+  const { productId: productIdFromParams } = useParams();
+
   const productId =
     useAppSelector((state) => state.product.productDetails.id) ||
-    pathname.split("/").pop();
+    productIdFromParams;
   const {
     data: productDetails,
     isLoading,
