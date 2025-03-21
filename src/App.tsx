@@ -4,13 +4,14 @@ import NavBar from "./components/navigation/NavBar";
 import { Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundaryComp from "./components/common/ErrorBoundaryComp";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <ErrorBoundary fallback={"Error loading Navigation"}>
+      <ErrorBoundary FallbackComponent={ErrorBoundaryComp}>
         <NavBar />
       </ErrorBoundary>
 

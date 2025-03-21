@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundaryComp from "./components/common/ErrorBoundaryComp";
 
 const App = lazy(() => import("./App.jsx"));
 const StoreFront = lazy(() => import("./components/storeFront/StoreFront.jsx"));
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ErrorBoundary fallback="Error Loading application">
+    <ErrorBoundary FallbackComponent={ErrorBoundaryComp}>
       <Provider store={store}>
         <Suspense fallback="Page Loading...">
           <RouterProvider router={router} />
