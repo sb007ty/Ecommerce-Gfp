@@ -1,4 +1,4 @@
-import { lazy, StrictMode } from "react";
+import { lazy, StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import ReviewsSection from "./components/storeFront/reviews/ReviewsSection";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { ErrorBoundary } from "react-error-boundary";
 
 const App = lazy(() => import("./App.jsx"));
 const StoreFront = lazy(() => import("./components/storeFront/StoreFront.jsx"));
@@ -43,8 +44,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <ErrorBoundary fallback="Error Loading application">
+      <Provider store={store}>
+        <Suspense fallback="Page Loading...">
+          <RouterProvider router={router} />
+        </Suspense>
+      </Provider>
+    </ErrorBoundary>
   </StrictMode>
 );
