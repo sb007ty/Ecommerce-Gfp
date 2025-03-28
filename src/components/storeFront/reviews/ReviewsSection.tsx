@@ -6,7 +6,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { fetchProductReviews } from "../../../swr/fetchers";
 import Loading from "../../common/Loading";
 import ApiErrorComp from "../../common/ApiErrorComp";
-console.log("HELLO&*********************");
+
 function ReviewsSection() {
   const location = useLocation();
   const { pathname } = location;
@@ -22,17 +22,17 @@ function ReviewsSection() {
     `https://www.greatfrontend.com/api/projects/challenges/e-commerce/products/${productId}/reviews`,
     fetchProductReviews
   );
-  console.log(reviewData, "data*");
+  // console.log(reviewData, "data*");
   if (isLoading) return <Loading />;
   if (error) return <ApiErrorComp />;
   const { aggregate, data, pagination } = reviewData || {};
   const { rating, total, counts } = aggregate!;
-  console.log("hello***", data, counts);
+  console.log("hello***", aggregate, data);
 
   return (
     <div className="reviews-section">
       <OverallRating rating={rating} total={total} counts={counts} />
-      <ReviewList />
+      <ReviewList reviews={data} />
     </div>
   );
 }

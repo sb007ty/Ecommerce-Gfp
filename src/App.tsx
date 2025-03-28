@@ -7,8 +7,6 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryComp from "./components/common/ErrorBoundaryComp";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <ErrorBoundary FallbackComponent={ErrorBoundaryComp}>

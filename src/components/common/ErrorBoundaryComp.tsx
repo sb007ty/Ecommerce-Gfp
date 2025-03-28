@@ -5,7 +5,7 @@ function ErrorBoundaryComp({ error, resetErrorBoundary }: FallbackProps) {
   console.dir(error);
   return (
     <div>
-      Error-{error.message}
+      {/* Error-{error?.message} */}
       <button onClick={(e) => resetErrorBoundary()}>Refresh</button>
     </div>
   );

@@ -27,7 +27,7 @@ function NavBar() {
     setHideNavMenu((hideNavMenu) => !hideNavMenu);
   }
   return (
-    <div className="nav-bar">
+    <div className="nav-bar ">
       <div className={"nav-menu" + (hideNavMenu ? " nav-menu-hidden" : "")}>
         <div className="nav-menu-image-div">
           <div className={"image-nav-menu"}>
