@@ -15,6 +15,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryComp from "./components/common/ErrorBoundaryComp";
+import ProductGridSection from "./components/storeFront/productGrid/ProductGridSection";
 
 const App = lazy(() => import("./App.jsx"));
 const StoreFront = lazy(() => import("./components/storeFront/StoreFront.jsx"));
@@ -39,10 +40,10 @@ const router = createBrowserRouter([
         path: "product-details/:productId",
         element: <ProductDetails />,
       },
-      // {
-      //   path: "reviews/:productId",
-      //   element: <ReviewsSection />,
-      // },
+      {
+        path: "shopall",
+        element: <ProductGridSection />,
+      },
     ],
   },
 ]);

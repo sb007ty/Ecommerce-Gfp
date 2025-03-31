@@ -39,7 +39,7 @@ function ReviewsSection({
   if (!seeReviews) return null;
   return createPortal(
     <div
-      className="reviews-section fixed top-4  border rounded-2xl left-6/12 -translate-x-6/12  p-10 h-[80vh] overflow-auto
+      className="reviews-section fixed top-4  border rounded-2xl left-6/12 -translate-x-6/12  p-2 md:p-10 h-[95vh] lg:h-[80vh] overflow-auto
     bg-white w-2/3"
     >
       <OverallRating

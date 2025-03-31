@@ -45,7 +45,7 @@ function OverallRating({
   const reverseCounts = [...counts].reverse();
 
   return (
-    <div className="overall-rating self-start border-2 p-3">
+    <div className="overall-rating self-start border-2 p-3 lg:w-2/6 w-6/6 ">
       <h2>Overall Rating</h2>
       <Rating rating={rating} reviews={total} ratingSection />
       {reverseCounts.map((item) => {

@@ -36,6 +36,7 @@ function Product({ product }: { product: any }) {
           alt="product-img"
           height={"300px"}
           width={"200px"}
+          loading="lazy"
         />
       </div>
       <div>{name}</div>

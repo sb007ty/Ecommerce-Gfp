@@ -10,10 +10,10 @@ function Review({ review }: { review: Review }) {
   const formattedDate = `${date} ${month} , ${year}`;
   return (
     <div className="user-review p-5">
-      <figure className="user-img-container min-w-[80px]">
+      <figure className="user-img-container min-w-[40px] md:min-w-[80px]">
         {avatar_url ? (
           <img
-            className="user-img h-[80px] max-w-full w-[80px]"
+            className="user-img h-[30px] max-w-full w-[30px] md:h-[80px] md:w-[80px]"
             src={avatar_url}
             alt=""
             height={"80px"}
