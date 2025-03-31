@@ -10,12 +10,12 @@
   gap: 15px;
 }
 .rating-name {
-  width: 200px;
+  width: 100px;
   text-align: left;
 }
 .rating-bar-outer {
   overflow: hidden;
-  width: 200px;
+  width: 100px;
   height: 5px;
   background-color: gray;
   border-radius: 20px;
@@ -26,8 +26,8 @@
 }
 .reviews-section {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  gap: 30px;
+  justify-content: flex-start;
   align-items: center;
 }
 @media screen and (max-width: 1440px) {
@@ -40,6 +40,8 @@
   gap: 10px;
   align-items: center;
   justify-content: flex-start;
+  flex-grow: 1;
+  flex-basis: 80%;
 }
 .review-list {
   display: flex;

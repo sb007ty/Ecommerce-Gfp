@@ -3,6 +3,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../redux/redux-hook";
+import { useState } from "react";
+import ReviewsSection from "../reviews/ReviewsSection";
 
 function Rating({
   rating,
@@ -16,8 +18,10 @@ function Rating({
   const ratingIsWholeNum = rating === Math.floor(rating);
   const productId = useAppSelector((state) => state.product.productDetails.id);
   const navigate = useNavigate();
+  const [seeReviews, setSeeReviews] = useState(false);
   const seeAllReviews = () => {
-    navigate(`/reviews/${productId}`);
+    // navigate(`/reviews/${productId}`);
+    setSeeReviews(true);
   };
 
   return (
@@ -45,6 +49,7 @@ function Rating({
           {reviews > 0 ? `See all ${reviews} reviews` : "No reviews"}
         </button>
       )}
+      <ReviewsSection seeReviews={seeReviews} setSeeReviews={setSeeReviews} />
     </div>
   );
 }
