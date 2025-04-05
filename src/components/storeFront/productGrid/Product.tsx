@@ -24,7 +24,7 @@ function Product({ product }: { product: any }) {
   //   console.log(uniqueColors, "un****");
   const goToProductDetails = () => {
     dispatch(updateProductDetailsId(product_id));
-    navigate(`product-details/${product_id}`);
+    navigate(`/product-details/${product_id}`);
   };
 
   return (

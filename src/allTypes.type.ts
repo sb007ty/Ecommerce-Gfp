@@ -16,7 +16,9 @@ export interface ProductDetailsInterface {
   sizes: string[];
   sold: number;
 }
-
+export interface CartItemInterface extends ProductDetailsInterface {
+  quantity: number;
+}
 // export interface for the 'category' object
 export interface Category {
   category_id: string;

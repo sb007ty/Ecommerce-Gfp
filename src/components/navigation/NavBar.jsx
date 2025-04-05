@@ -36,15 +36,19 @@ function NavBar() {
           <FontAwesomeIcon icon={faX} onClick={() => setHideNavMenu(true)} />
         </div>
 
-        <NavLink className={"shop-all-nav-menu"}>Shop All</NavLink>
+        <NavLink className={"shop-all-nav-menu"} to={"/shopall?page=1"}>
+          Shop All
+        </NavLink>
         <NavLink className={"latest-arrival-nav-menu"}>Latest Arrival</NavLink>
       </div>
       <div className="nav-img">
         <img src={stylenest} alt="" />
       </div>
-      <NavLink className={"shop-all"}>Shop All</NavLink>
+      <NavLink className={"shop-all"} to={"/shopall?page=1"}>
+        Shop All
+      </NavLink>
       <NavLink className={"latest-arrival"}>Latest Arrival</NavLink>
-      <NavLink>
+      <NavLink className={"nav-cart"} to={"/checkout"}>
         <FontAwesomeIcon icon={faCartShopping} />
       </NavLink>
       <FontAwesomeIcon

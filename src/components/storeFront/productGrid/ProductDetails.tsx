@@ -127,6 +127,7 @@ function ProductDetails() {
           <div>Quantity</div>
           <div className="quantity-btns">
             <button
+              className="btn-number"
               onClick={(e) => {
                 if (quantity >= 1) setQuantity(quantity - 1);
               }}
@@ -134,10 +135,16 @@ function ProductDetails() {
               -
             </button>
             <button>{quantity}</button>
-            <button onClick={(e) => setQuantity(quantity + 1)}>+</button>
+            <button
+              onClick={(e) => setQuantity(quantity + 1)}
+              className="btn-number"
+            >
+              +
+            </button>
           </div>
         </div>
         <button
+          className="btn-number"
           onClick={(e) => {
             console.log("helo");
             dispatch(updateProductCart({ productDetails, quantity }));

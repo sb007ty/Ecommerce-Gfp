@@ -1,7 +1,7 @@
 import React from "react";
 
 const CollectionFilter: React.FC = () => {
-  return <div>hi</div>;
+  return <div></div>;
 };
 
 export default CollectionFilter;
